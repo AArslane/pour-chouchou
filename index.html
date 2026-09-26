@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="color-scheme" content="light">
+<title>Pour toi, Chouchou</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Caveat:wght@500;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #f7f1e8;
+    --paper-deep: #efe5d6;
+    --card: #fffdf9;
+    --ink: #2b2320;
+    --ink-soft: #6d5f57;
+    --rose: #b5566b;
+    --rose-soft: #e8c4c9;
+    --gold: #b08a4e;
+    --line: #e2d6c5;
+    --serif: "Cormorant Garamond", Georgia, serif;
+    --hand: "Caveat", cursive;
+    --sans: "DM Sans", system-ui, sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--serif);
+    font-size: 1.25rem;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  body::before {
+    content: "";
+    position: fixed; inset: 0;
+    background:
+      radial-gradient(circle at 15% 10%, rgba(232,196,201,.35), transparent 40%),
+      radial-gradient(circle at 90% 85%, rgba(176,138,78,.12), transparent 45%);
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  /* Emplacements à remplir : bien visibles tant qu'ils ne sont pas remplacés */
+  .todo {
+    color: var(--rose);
+    background: rgba(181,86,107,.07);
+    border-bottom: 1.5px dashed var(--rose);
+    font-style: italic;
+    padding: 0 .2em;
+  }
+
+  .wrap { max-width: 680px; margin: 0 auto; padding: 0 20px; }
+
+  .eyebrow {
+    font-family: var(--sans);
+    font-size: .72rem;
+    font-weight: 600;
+    letter-spacing: .22em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+
+  /* ---------- Ouverture ---------- */
+  .hero {
+    min-height: 100svh;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    text-align: center;
+    padding: 40px 20px;
+  }
+  .hero .date { margin-bottom: 28px; }
+  .hero h1 {
+    font-family: var(--hand);
+    font-weight: 700;
+    font-size: clamp(4.5rem, 20vw, 8rem);
+    line-height: .9;
+    color: var(--rose);
+  }
+  .hero .sub {
+    font-style: italic;
+    font-size: clamp(1.5rem, 5vw, 2rem);
+    margin-top: 14px;
+  }
+  .heart {
+    width: 18px; height: 18px;
+    margin: 36px auto;
+    color: var(--rose);
+    animation: beat 1.8s ease-in-out infinite;
+  }
+  @keyframes beat { 0%,100% { transform: scale(1); } 15% { transform: scale(1.18); } 30% { transform: scale(1); } }
+  .open-btn {
+    font-family: var(--sans);
+    font-size: .95rem;
+    font-weight: 500;
+    color: var(--card);
+    background: var(--ink);
+    border: none;
+    border-radius: 999px;
+    padding: 15px 30px;
+    text-decoration: none;
+    transition: transform .2s, background .2s;
+  }
+  .open-btn:hover { background: var(--rose); transform: translateY(-2px); }
+
+  /* ---------- Sections ---------- */
+  section { padding: 90px 0; }
+  .section-head { text-align: center; margin-bottom: 44px; }
+  .section-head .num {
+    font-family: var(--sans);
+    font-size: .8rem;
+    color: var(--ink-soft);
+  }
+  .section-head h2 {
+    font-weight: 500;
+    font-size: clamp(2.1rem, 7vw, 2.8rem);
+    line-height: 1.15;
+    margin-top: 8px;
+  }
+  .section-head h2 em { color: var(--rose); }
+  .divider {
+    width: 48px; height: 1px;
+    background: var(--gold);
+    margin: 18px auto 0;
+  }
+
+  /* ---------- Lettre ---------- */
+  .letter {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: clamp(32px, 7vw, 64px) clamp(24px, 7vw, 60px);
+    box-shadow: 0 1px 0 var(--line), 0 24px 60px -30px rgba(43,35,32,.25);
+    position: relative;
+  }
+  .letter::before {
+    content: "";
+    position: absolute; top: 0; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    background: var(--rose);
+    box-shadow: inset 0 0 0 4px rgba(255,255,255,.18);
+  }
+  .letter .salut {
+    font-family: var(--hand);
+    font-size: 2.6rem;
+    color: var(--rose);
+    margin-bottom: 20px;
+  }
+  .letter p + p { margin-top: 1.1em; }
+  .letter .part {
+    font-family: var(--sans);
+    font-size: .7rem;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin: 2.4em 0 .6em;
+  }
+  .letter blockquote {
+    border-left: 2px solid var(--rose-soft);
+    padding-left: 18px;
+    font-style: italic;
+    color: var(--ink-soft);
+    margin-top: 1.1em;
+  }
+  .letter .sign {
+    margin-top: 2.4em;
+    text-align: right;
+    font-family: var(--hand);
+    font-size: 2.1rem;
+    line-height: 1.2;
+    color: var(--ink);
+  }
+
+  /* ---------- Parcours ---------- */
+  .timeline { position: relative; padding-left: 34px; }
+  .timeline::before {
+    content: "";
+    position: absolute; left: 7px; top: 8px; bottom: 8px;
+    width: 1px;
+    background: linear-gradient(var(--gold), var(--rose));
+  }
+  .step { position: relative; padding-bottom: 40px; }
+  .step:last-child { padding-bottom: 0; }
+  .step::before {
+    content: "";
+    position: absolute; left: -34px; top: 8px;
+    width: 15px; height: 15px;
+    border-radius: 50%;
+    background: var(--paper);
+    border: 2px solid var(--gold);
+  }
+  .step.now::before { background: var(--rose); border-color: var(--rose); }
+  .step .when {
+    font-family: var(--sans);
+    font-size: .78rem;
+    font-weight: 600;
+    letter-spacing: .08em;
+    color: var(--gold);
+  }
+  .step h3 { font-weight: 600; font-size: 1.5rem; line-height: 1.3; margin: 2px 0 6px; }
+  .step p { color: var(--ink-soft); font-size: 1.15rem; }
+
+  /* ---------- Ce que j'aime ---------- */
+  .loves {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+  }
+  .love {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 26px 24px;
+  }
+  .love .n {
+    font-family: var(--hand);
+    font-size: 2rem;
+    color: var(--rose);
+    line-height: 1;
+  }
+  .love p { margin-top: 10px; font-size: 1.15rem; }
+
+  /* ---------- Bon cadeau ---------- */
+  .ticket {
+    display: flex;
+    background: var(--ink);
+    color: var(--paper);
+    border-radius: 16px;
+    overflow: hidden;
+    position: relative;
+  }
+  .ticket .main { flex: 1; padding: 34px 28px; }
+  .ticket .stub {
+    width: 96px;
+    border-left: 2px dashed rgba(247,241,232,.3);
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--sans);
+    font-size: .7rem;
+    letter-spacing: .25em;
+    text-transform: uppercase;
+    writing-mode: vertical-rl;
+    color: var(--rose-soft);
+  }
+  .ticket::before, .ticket::after {
+    content: "";
+    position: absolute;
+    right: 84px;
+    width: 24px; height: 24px;
+    border-radius: 50%;
+    background: var(--paper);
+  }
+  .ticket::before { top: -12px; }
+  .ticket::after { bottom: -12px; }
+  .ticket .eyebrow { color: var(--rose-soft); }
+  .ticket h3 {
+    font-family: var(--hand);
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1.1;
+    margin: 8px 0 12px;
+  }
+  .ticket .todo { color: var(--rose-soft); border-color: var(--rose-soft); background: rgba(232,196,201,.1); }
+  .ticket .valid { font-family: var(--sans); font-size: .9rem; opacity: .8; }
+
+  /* ---------- Fin ---------- */
+  .end { text-align: center; padding: 110px 20px 130px; }
+  .end h2 {
+    font-family: var(--hand);
+    font-size: clamp(3.5rem, 15vw, 5.5rem);
+    color: var(--rose);
+    line-height: 1;
+  }
+  .end p { font-style: italic; margin-top: 16px; color: var(--ink-soft); }
+
+  /* ---------- Chats & fleurs (repris du Chat-gnostic) ---------- */
+  :root { --mint: #9fdcc8; --butter: #ffd98a; --lilac: #cdb4f5; --peach: #ffbf9e; }
+  .ico { display: block; }
+  .float { animation: bob 7s ease-in-out infinite; }
+  .float.b { animation-duration: 9s; animation-delay: -3s; }
+  .float.c { animation-duration: 11s; animation-delay: -6s; }
+  @keyframes bob { 0%,100% { transform: translateY(0) rotate(-3deg); } 50% { transform: translateY(-10px) rotate(4deg); } }
+
+  /* Décor fixe sur grand écran */
+  .decor { position: fixed; inset: 0; pointer-events: none; z-index: 0; overflow: hidden; }
+  .decor svg { position: absolute; }
+  .d1 { top: 6%; left: 3%; width: 84px; color: var(--lilac); }
+  .d2 { bottom: 10%; left: 4%; width: 110px; color: var(--butter); }
+  .d3 { top: 12%; right: 4%; width: 96px; color: var(--mint); }
+  .d4 { bottom: 8%; right: 5%; width: 88px; color: var(--peach); }
+  .d5 { top: 48%; left: 2%; width: 56px; color: var(--rose-soft); }
+  .d6 { top: 58%; right: 2.5%; width: 62px; color: var(--rose-soft); }
+  @media (max-width: 1100px) { .decor { display: none; } }
+  main, header, footer { position: relative; z-index: 1; }
+
+  /* Ouverture */
+  .hero-deco { position: relative; width: 100%; max-width: 420px; height: 0; }
+  .hero-deco svg { position: absolute; }
+  .hf1 { width: 54px; left: 0; top: -250px; color: var(--rose-soft); }
+  .hf2 { width: 40px; right: 10px; top: -210px; color: var(--butter); }
+  .hf3 { width: 34px; right: 40px; top: -40px; color: var(--lilac); }
+  .hero-cat { width: 110px; margin: 26px auto 0; color: var(--rose-soft); }
+
+  /* Divider fleur */
+  .divider { display: none; }
+  .div-flower { width: 26px; margin: 14px auto 0; color: var(--rose-soft); }
+
+  /* Chat qui dépasse de la lettre */
+  .peek { position: absolute; top: -52px; right: 26px; width: 74px; color: var(--butter); }
+  .letter-flower { position: absolute; bottom: -18px; left: 22px; width: 44px; color: var(--lilac); }
+
+  /* Frise : pattes à la place des points */
+  .step::before { display: none; }
+  .step .paw { position: absolute; left: -43px; top: 2px; width: 32px; color: var(--paper-deep); }
+  .step.now .paw { color: var(--rose-soft); }
+
+  /* Cartes */
+  .love { position: relative; }
+  .love .mini { position: absolute; top: 18px; right: 18px; width: 30px; }
+  .love:nth-child(1) .mini { color: var(--rose-soft); }
+  .love:nth-child(2) .mini { color: var(--mint); }
+  .love:nth-child(3) .mini { color: var(--butter); }
+  .love:nth-child(4) .mini { color: var(--lilac); }
+
+  /* Ticket */
+  .ticket .stub { flex-direction: column; gap: 12px; }
+  .stub-cat { width: 44px; color: var(--rose-soft); writing-mode: horizontal-tb; }
+
+  /* Fin */
+  .end-art { display: flex; justify-content: center; align-items: flex-end; gap: 6px; margin-bottom: 18px; }
+  .end-art .c1 { width: 96px; color: var(--butter); }
+  .end-art .c2 { width: 80px; color: var(--rose-soft); transform: scaleX(-1); }
+  .end-art .f { width: 38px; color: var(--lilac); }
+
+  @media (max-width: 480px) {
+    .stub-cat { width: 34px; }
+    .peek { width: 60px; top: -42px; }
+  }
+
+  /* ---------- Apparition au défilement ---------- */
+  .reveal { opacity: 0; transform: translateY(24px); transition: opacity .9s ease, transform .9s ease; }
+  .reveal.in { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) {
+    .reveal { opacity: 1; transform: none; transition: none; }
+    .heart, .float { animation: none; }
+    html { scroll-behavior: auto; }
+  }
+
+  @media (max-width: 480px) {
+    body { font-size: 1.15rem; }
+    section { padding: 70px 0; }
+    .ticket .stub { width: 64px; }
+    .ticket::before, .ticket::after { right: 52px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ===================================================================
+     Pour remplir : cherche "À REMPLIR" (Ctrl+F) et remplace chaque
+     <span class="todo">…</span> par ton texte (sans les balises span).
+     =================================================================== -->
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="cat" viewBox="0 0 100 100">
+      <path d="M22 34 L18 12 L38 24 Z" fill="currentColor" stroke="#46163C" stroke-width="4" stroke-linejoin="round"/>
+      <path d="M78 34 L82 12 L62 24 Z" fill="currentColor" stroke="#46163C" stroke-width="4" stroke-linejoin="round"/>
+      <circle cx="50" cy="55" r="32" fill="currentColor" stroke="#46163C" stroke-width="4"/>
+      <path d="M36 50 q5 -6 10 0" fill="none" stroke="#46163C" stroke-width="4" stroke-linecap="round"/>
+      <path d="M54 50 q5 -6 10 0" fill="none" stroke="#46163C" stroke-width="4" stroke-linecap="round"/>
+      <path d="M46 62 h8 l-4 5 z" fill="#46163C"/>
+      <path d="M50 67 q-6 6 -11 1 M50 67 q6 6 11 1" fill="none" stroke="#46163C" stroke-width="3.5" stroke-linecap="round"/>
+      <path d="M14 58 h14 M14 68 h14 M86 58 h-14 M86 68 h-14" stroke="#46163C" stroke-width="3" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="catsit" viewBox="0 0 100 120">
+      <path d="M74 96 q22 2 20 -14 q-2 -12 -14 -10" fill="none" stroke="#46163C" stroke-width="5" stroke-linecap="round"/>
+      <path d="M26 100 q-6 -40 24 -42 q30 2 24 42 z" fill="currentColor" stroke="#46163C" stroke-width="4" stroke-linejoin="round"/>
+      <path d="M28 44 L24 22 L44 34 Z" fill="currentColor" stroke="#46163C" stroke-width="4" stroke-linejoin="round"/>
+      <path d="M72 44 L76 22 L56 34 Z" fill="currentColor" stroke="#46163C" stroke-width="4" stroke-linejoin="round"/>
+      <circle cx="50" cy="52" r="24" fill="currentColor" stroke="#46163C" stroke-width="4"/>
+      <circle cx="42" cy="50" r="3.4" fill="#46163C"/><circle cx="58" cy="50" r="3.4" fill="#46163C"/>
+      <path d="M47 59 h6 l-3 4 z" fill="#46163C"/>
+    </symbol>
+    <symbol id="flower" viewBox="0 0 100 100">
+      <g stroke="#46163C" stroke-width="4">
+        <circle cx="50" cy="22" r="16" fill="currentColor"/>
+        <circle cx="78" cy="42" r="16" fill="currentColor"/>
+        <circle cx="67" cy="76" r="16" fill="currentColor"/>
+        <circle cx="33" cy="76" r="16" fill="currentColor"/>
+        <circle cx="22" cy="42" r="16" fill="currentColor"/>
+        <circle cx="50" cy="50" r="13" fill="#FFD24C"/>
+      </g>
+    </symbol>
+    <symbol id="paw" viewBox="0 0 100 100">
+      <g fill="currentColor" stroke="#46163C" stroke-width="4">
+        <ellipse cx="28" cy="36" rx="11" ry="14"/>
+        <ellipse cx="50" cy="26" rx="11" ry="15"/>
+        <ellipse cx="72" cy="36" rx="11" ry="14"/>
+        <ellipse cx="50" cy="68" rx="26" ry="21"/>
+      </g>
+    </symbol>
+  </defs>
+</svg>
+
+<div class="decor" aria-hidden="true">
+  <svg class="d1 float" viewBox="0 0 100 100"><use href="#flower"/></svg>
+  <svg class="d2 float b" viewBox="0 0 100 120"><use href="#catsit"/></svg>
+  <svg class="d3 float c" viewBox="0 0 100 100"><use href="#flower"/></svg>
+  <svg class="d4 float" viewBox="0 0 100 100"><use href="#cat"/></svg>
+  <svg class="d5 float b" viewBox="0 0 100 100"><use href="#paw"/></svg>
+  <svg class="d6 float c" viewBox="0 0 100 100"><use href="#flower"/></svg>
+</div>
+
+<header class="hero">
+  <p class="eyebrow date">26 septembre 2026</p>
+  <h1>Chouchou</h1>
+  <p class="sub">Joyeux anniversaire</p>
+  <svg class="heart" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 3 4.5 6.8 4.5c2.1 0 3.6 1.2 5.2 3 1.6-1.8 3.1-3 5.2-3 3.8 0 5.9 3.9 4.4 7.3C19.5 16.4 12 21 12 21z"/></svg>
+  <div class="hero-deco" aria-hidden="true">
+    <svg class="hf1 float" viewBox="0 0 100 100"><use href="#flower"/></svg>
+    <svg class="hf2 float b" viewBox="0 0 100 100"><use href="#flower"/></svg>
+    <svg class="hf3 float c" viewBox="0 0 100 100"><use href="#flower"/></svg>
+  </div>
+  <a class="open-btn" href="#lettre">Ouvrir ta lettre</a>
+  <svg class="ico hero-cat float" viewBox="0 0 100 120" aria-hidden="true"><use href="#catsit"/></svg>
+</header>
+
+<main>
+
+  <!-- 01 — La lettre -->
+  <section id="lettre">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="num">01</p>
+        <h2>Une lettre <em>pour toi</em></h2>
+        <svg class="ico div-flower" viewBox="0 0 100 100" aria-hidden="true"><use href="#flower"/></svg>
+      </div>
+
+      <article class="letter reveal">
+        <svg class="ico peek float" viewBox="0 0 100 100" aria-hidden="true"><use href="#cat"/></svg>
+        <svg class="ico letter-flower" viewBox="0 0 100 100" aria-hidden="true"><use href="#flower"/></svg>
+        <p class="salut">Chouchou,</p>
+
+        <p><span class="todo">À REMPLIR : l'ouverture. Aujourd'hui c'est ton jour, pourquoi tu lui écris…</span></p>
+
+        <p class="part">Là où tout a commencé</p>
+        <p><span class="todo">À REMPLIR : un souvenir précis de vous deux (le lieu, ce qu'elle a dit, ce que tu as ressenti)</span></p>
+
+        <p class="part">Ce que j'ai sur le cœur</p>
+        <p><span class="todo">À REMPLIR : ce que tu as vraiment envie de lui dire, sans filtre</span></p>
+        <p><span class="todo">À REMPLIR : suite, si tu en as besoin</span></p>
+        <blockquote><span class="todo">À REMPLIR : une phrase forte à mettre en avant (ou supprime ce bloc)</span></blockquote>
+
+        <p class="part">Ce que je vois en toi</p>
+        <p><span class="todo">À REMPLIR : ce que tu admires chez elle, son courage, le salon, ce qu'elle traverse</span></p>
+
+        <p class="part">Ce qui nous attend</p>
+        <p><span class="todo">À REMPLIR : ce que tu as hâte de vivre avec elle</span></p>
+
+        <p class="sign">Je t'aime,<br><span class="todo">À REMPLIR : ton prénom</span></p>
+      </article>
+    </div>
+  </section>
+
+  <!-- 02 — Son parcours -->
+  <section>
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="num">02</p>
+        <h2>Ton <em>parcours</em></h2>
+        <svg class="ico div-flower" viewBox="0 0 100 100" aria-hidden="true"><use href="#flower"/></svg>
+      </div>
+
+      <div class="timeline">
+        <div class="step reveal">
+          <svg class="ico paw" viewBox="0 0 100 100" aria-hidden="true"><use href="#paw"/></svg>
+          <p class="when"><span class="todo">À REMPLIR : date</span></p>
+          <h3><span class="todo">À REMPLIR : étape</span></h3>
+          <p><span class="todo">À REMPLIR : ce qu'elle a vécu / accompli</span></p>
+        </div>
+        <div class="step reveal">
+          <svg class="ico paw" viewBox="0 0 100 100" aria-hidden="true"><use href="#paw"/></svg>
+          <p class="when"><span class="todo">À REMPLIR : date</span></p>
+          <h3><span class="todo">À REMPLIR : étape</span></h3>
+          <p><span class="todo">À REMPLIR : ce qu'elle a vécu / accompli</span></p>
+        </div>
+        <div class="step reveal">
+          <svg class="ico paw" viewBox="0 0 100 100" aria-hidden="true"><use href="#paw"/></svg>
+          <p class="when"><span class="todo">À REMPLIR : date</span></p>
+          <h3><span class="todo">À REMPLIR : étape</span></h3>
+          <p><span class="todo">À REMPLIR : ce qu'elle a vécu / accompli</span></p>
+        </div>
+        <div class="step now reveal">
+          <svg class="ico paw" viewBox="0 0 100 100" aria-hidden="true"><use href="#paw"/></svg>
+          <p class="when">Aujourd'hui</p>
+          <h3><span class="todo">À REMPLIR : où elle en est (le salon ?)</span></h3>
+          <p><span class="todo">À REMPLIR : ce que tu vois d'elle maintenant</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 — Ce que j'aime chez toi -->
+  <section>
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="num">03</p>
+        <h2>Ce que j'aime <em>chez toi</em></h2>
+        <svg class="ico div-flower" viewBox="0 0 100 100" aria-hidden="true"><use href="#flower"/></svg>
+      </div>
+
+      <div class="loves">
+        <div class="love reveal"><svg class="ico mini" viewBox="0 0 100 100" aria-hidden="true"><use href="#flower"/></svg><p class="n">01</p><p><span class="todo">À REMPLIR : petit détail</span></p></div>
+        <div class="love reveal"><svg class="ico mini" viewBox="0 0 100 100" aria-hidden="true"><use href="#flower"/></svg><p class="n">02</p><p><span class="todo">À REMPLIR : petit détail</span></p></div>
+        <div class="love reveal"><svg class="ico mini" viewBox="0 0 100 100" aria-hidden="true"><use href="#flower"/></svg><p class="n">03</p><p><span class="todo">À REMPLIR : petit détail</span></p></div>
+        <div class="love reveal"><svg class="ico mini" viewBox="0 0 100 100" aria-hidden="true"><use href="#flower"/></svg><p class="n">04</p><p><span class="todo">À REMPLIR : petit détail</span></p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 — Bon cadeau -->
+  <section>
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="num">04</p>
+        <h2>Et ce n'est <em>que le début</em></h2>
+        <svg class="ico div-flower" viewBox="0 0 100 100" aria-hidden="true"><use href="#flower"/></svg>
+      </div>
+
+      <div class="ticket reveal">
+        <div class="main">
+          <p class="eyebrow">Bon cadeau</p>
+          <h3>Bon pour <span class="todo">À REMPLIR : resto / sortie</span></h3>
+          <p class="valid">Valable lundi 28 septembre · rien à prévoir, je m'occupe de tout</p>
+        </div>
+        <div class="stub"><svg class="ico stub-cat" viewBox="0 0 100 100" aria-hidden="true"><use href="#cat"/></svg>Pour toi</div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="end reveal">
+  <div class="end-art" aria-hidden="true">
+    <svg class="ico c1 float" viewBox="0 0 100 120"><use href="#catsit"/></svg>
+    <svg class="ico f float b" viewBox="0 0 100 100"><use href="#flower"/></svg>
+    <svg class="ico c2 float c" viewBox="0 0 100 120"><use href="#catsit"/></svg>
+  </div>
+  <h2>Je t'aime</h2>
+  <p><span class="todo">À REMPLIR : votre rituel / votre blague (ou supprime cette ligne)</span></p>
+</footer>
+
+<script>
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e) => {
+      if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.15 });
+  document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
+</script>
+</body>
+</html>
