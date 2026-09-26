@@ -342,6 +342,37 @@
     .peek { width: 60px; top: -42px; }
   }
 
+  /* ---------- Lettre : mise en valeur ---------- */
+  .letter .hl { font-size: 1.45em; font-style: italic; color: var(--rose); line-height: 1.35; margin: 1.3em 0; }
+  .letter .big-line { font-family: var(--hand); font-size: 2.3em; color: var(--rose); line-height: 1.15; text-align: center; margin: .6em 0 1em; }
+  .letter blockquote { font-size: 1.12em; margin: 1.4em 0; }
+  .letter .sep { margin: 2.2em 0; }
+  .letter .sep .div-flower { width: 22px; }
+  .letter .mochi { display: flex; align-items: center; gap: 14px; font-family: var(--hand); font-size: 2.1em; line-height: 1.1; margin: .8em 0; }
+  .mochi-cat { width: 52px; flex: 0 0 auto; color: var(--butter); }
+  .letter .litany { list-style: none; margin: 1.4em 0; padding: 0; border-left: 2px solid var(--rose-soft); }
+  .letter .litany li { padding: .25em 0 .25em 18px; font-style: italic; }
+  .letter .litany li + li { margin-top: .2em; }
+  .letter .closing { margin-top: 2.8em; padding-top: 1.6em; border-top: 1px solid var(--line); text-align: center; }
+  .letter .closing p + p { margin-top: .3em; }
+  .letter .closing .love-line { font-family: var(--hand); font-size: 2.2em; color: var(--rose); line-height: 1.2; }
+  .letter .closing .wink { font-style: italic; color: var(--ink-soft); }
+
+  /* ---------- Oui / Non ---------- */
+  .rsvp { text-align: center; margin-top: 40px; }
+  .rsvp .ask { font-style: italic; font-size: 1.4rem; }
+  .choices { position: relative; height: 150px; margin-top: 18px; display: flex; justify-content: center; align-items: center; gap: 16px; }
+  .choices button { font-family: var(--sans); font-size: 1rem; font-weight: 600; border-radius: 999px; padding: 13px 30px; cursor: pointer; border: 2px solid #46163C; transition: transform .25s ease; }
+  .yes { background: var(--rose); color: #fff; box-shadow: 4px 4px 0 #46163C; position: relative; z-index: 2; }
+  .no { background: var(--card); color: var(--ink); white-space: nowrap; }
+  .no.run { position: absolute; transition: left .25s ease, top .25s ease; }
+  .answer { margin-top: 18px; }
+  .answer-cat { width: 90px; margin: 0 auto 6px; color: var(--butter); animation: bob 3s ease-in-out infinite; }
+  .answer .ok { font-family: var(--hand); font-size: 2.6rem; color: var(--rose); line-height: 1.1; }
+  .confetti { position: fixed; top: -40px; z-index: 50; pointer-events: none; animation: fall linear forwards; }
+  @keyframes fall { to { transform: translateY(110vh) rotate(540deg); } }
+  .end-art .c3 { width: 54px; color: var(--mint); }
+
   /* ---------- Apparition au défilement ---------- */
   .reveal { opacity: 0; transform: translateY(24px); transition: opacity .9s ease, transform .9s ease; }
   .reveal.in { opacity: 1; transform: none; }
@@ -445,101 +476,96 @@
       <article class="letter reveal">
         <svg class="ico peek float" viewBox="0 0 100 100" aria-hidden="true"><use href="#cat"/></svg>
         <svg class="ico letter-flower" viewBox="0 0 100 100" aria-hidden="true"><use href="#flower"/></svg>
-        <p class="salut">Chouchou,</p>
+        <p class="salut">Ma chérie d’amour,</p>
 
-        <p><span class="todo">À REMPLIR : l'ouverture. Aujourd'hui c'est ton jour, pourquoi tu lui écris…</span></p>
+        <p>Aujourd’hui c’est ton anniversaire, et je crois que j’avais envie de profiter de cette occasion pour te dire des choses que je ne prends peut-être pas assez souvent le temps de te dire.</p>
+        <p class="hl">Je suis tellement fier de la personne que tu es.</p>
+        <p>Tu as une personnalité bien à toi, ça c’est indéniable. T’es têtue, tu sais exactement ce que tu veux, et quand t’as quelque chose dans la tête, bonne chance pour te faire changer d’avis.</p>
+        <p>Mais c’est aussi une des choses que j’aime le plus chez toi.</p>
+        <p>Parce que derrière cette personnalité, il y a une femme incroyablement forte. Une femme qui se bat pour les gens qu’elle aime, qui ne fait jamais les choses à moitié, qui ressent tout très fort et qui aime encore plus fort.</p>
+        <p>Et derrière toute cette force, il y a surtout énormément de tendresse.</p>
+        <p>Tu es probablement une des personnes les plus gentilles que je connaisse. Tu as ce truc en toi qui fait que tu prends soin des autres naturellement. Tu donnes énormément, parfois même beaucoup trop. Et j’ai la chance de voir cette partie de toi que tout le monde ne voit pas forcément : la Fafa toute douce, sensible, attentionnée, qui aime juste très fort les personnes qui font partie de son petit monde.</p>
+        <div class="sep" aria-hidden="true"><svg class="ico div-flower" viewBox="0 0 100 100" aria-hidden="true"><use href="#flower"/></svg></div>
+        <p>Et cette année, notre petit monde s’est agrandi.</p>
+        <p class="mochi"><svg class="ico mochi-cat" viewBox="0 0 100 120" aria-hidden="true"><use href="#catsit"/></svg><span>On a accueilli Mochi.</span></p>
+        <p>Et je ne pensais vraiment pas qu’un petit chat allait prendre autant de place dans notre vie, ni que j’allais autant aimer le fait de construire cette petite famille avec toi.</p>
+        <p>Te voir avec lui me fait tellement sourire. Nous voir tous les trois dans notre appartement, avec nos petites habitudes complètement débiles, le voir grandir avec nous, s’inquiéter ensemble au moindre truc, parler de lui comme si c’était littéralement notre enfant…</p>
+        <p>Je sais que ça peut paraître tout con, mais j’adore être parent avec toi.</p>
+        <p>J’adore notre petite famille.</p>
+        <blockquote>Et je crois que c’est surtout parce que derrière Mochi, il y a quelque chose de beaucoup plus grand qui me touche : je construis une vie avec toi.</blockquote>
+        <div class="sep" aria-hidden="true"><svg class="ico div-flower" viewBox="0 0 100 100" aria-hidden="true"><use href="#flower"/></svg></div>
+        <p>Cette année n’a pas toujours été simple pour nous.</p>
+        <p>On a eu des moments où on était fatigués, stressés, où tout semblait arriver en même temps. On a eu nos problèmes, nos disputes, nos incertitudes, nos moments où on ne savait pas forcément comment les choses allaient se passer.</p>
+        <p class="hl">Mais malgré tout ça, on est toujours là.</p>
+        <p>Et si j’arrive à regarder cette année avec autant de recul aujourd’hui, c’est aussi énormément grâce à toi.</p>
+        <p>Parce que dans beaucoup de moments où les choses étaient compliquées, tu as été là. Tu m’as soutenu, tu m’as rassuré, tu m’as supporté aussi — et Dieu sait qu’il en faut parfois du courage pour ça.</p>
+        <blockquote>Tu as été mon chez-moi dans une année où beaucoup de choses autour de moi étaient incertaines.</blockquote>
+        <p>Et je ne sais pas si tu réalises réellement à quel point ça a compté pour moi.</p>
+        <p>Quand je regarde tout ce qu’on a traversé, je ne retiens pas seulement les difficultés. Je retiens surtout qu’on les a traversées ensemble.</p>
+        <p>Je retiens nos soirées, nos conneries, nos moments à deux, notre appartement, Mochi, les moments où on rigole pour absolument rien, ceux où on parle de notre avenir, nos petites habitudes qui ne veulent rien dire pour les autres mais qui représentent énormément pour moi.</p>
+        <div class="sep" aria-hidden="true"><svg class="ico div-flower" viewBox="0 0 100 100" aria-hidden="true"><use href="#flower"/></svg></div>
+        <p>Et aujourd’hui, pour ton anniversaire, j’aimerais surtout que tu puisses te voir pendant quelques secondes comme moi je te vois.</p>
+        <ul class="litany">
+          <li>Une femme forte.</li>
+          <li>Une femme magnifique.</li>
+          <li>Une femme avec un cœur immense.</li>
+          <li>Une femme extrêmement talentueuse, déterminée, sensible, drôle, parfois un peu têtue, tendre et profondément gentille.</li>
+          <li>Une femme dont je suis fier.</li>
+        </ul>
+        <p class="hl">Et surtout, la femme avec qui j’ai envie de continuer à construire tout ce magnifique monde !</p>
+        <p>Je ne sais pas exactement à quoi ressembleront les prochaines années. Je ne sais pas où on vivra, ce qu’on fera, combien de chats on finira par adopter malgré mes protestations, ni toutes les galères qui nous attendent encore.</p>
+        <p>Mais il y a une chose dont je suis sûr :</p>
+        <p class="big-line">je suis heureux que ce soit avec toi.</p>
+        <p>J’espère que cette nouvelle année de ta vie t’apportera tout ce que tu mérites. J’espère te voir réussir, grandir, être fière de toi, réaliser tes projets et devenir encore davantage la femme que tu veux être.</p>
+        <p>Et j’espère être là pour voir tout ça.</p>
+        <ul class="litany">
+          <li>Pour t’encourager quand tu doutes.</li>
+          <li>Pour célébrer avec toi quand tu réussis.</li>
+          <li>Pour te faire rire et te taquiner quotidiennement.</li>
+          <li>Pour prendre soin de Mochi avec toi.</li>
+        </ul>
+        <p>Et simplement pour continuer à rentrer chez nous et me dire que, malgré tout ce qui peut se passer dehors, j’ai construit quelque chose de précieux ici.</p>
+        <p class="hl">Avec toi.</p>
 
-        <p class="part">Là où tout a commencé</p>
-        <p><span class="todo">À REMPLIR : un souvenir précis de vous deux (le lieu, ce qu'elle a dit, ce que tu as ressenti)</span></p>
-
-        <p class="part">Ce que j'ai sur le cœur</p>
-        <p><span class="todo">À REMPLIR : ce que tu as vraiment envie de lui dire, sans filtre</span></p>
-        <p><span class="todo">À REMPLIR : suite, si tu en as besoin</span></p>
-        <blockquote><span class="todo">À REMPLIR : une phrase forte à mettre en avant (ou supprime ce bloc)</span></blockquote>
-
-        <p class="part">Ce que je vois en toi</p>
-        <p><span class="todo">À REMPLIR : ce que tu admires chez elle, son courage, le salon, ce qu'elle traverse</span></p>
-
-        <p class="part">Ce qui nous attend</p>
-        <p><span class="todo">À REMPLIR : ce que tu as hâte de vivre avec elle</span></p>
-
-        <p class="sign">Je t'aime,<br><span class="todo">À REMPLIR : ton prénom</span></p>
+        <div class="closing">
+          <p>Joyeux anniversaire ma chérie d’amour.</p>
+          <p class="love-line">Je t’aime énormément.</p>
+          <p>Et merci d’être toi.</p>
+          <p class="wink">Même avec ton petit côté têtu. ❤️</p>
+        </div>
       </article>
     </div>
   </section>
 
-  <!-- 02 — Son parcours -->
+  <!-- 02 — Bon cadeau -->
   <section>
     <div class="wrap">
       <div class="section-head reveal">
         <p class="num">02</p>
-        <h2>Ton <em>parcours</em></h2>
-        <svg class="ico div-flower" viewBox="0 0 100 100" aria-hidden="true"><use href="#flower"/></svg>
-      </div>
-
-      <div class="timeline">
-        <div class="step reveal">
-          <svg class="ico paw" viewBox="0 0 100 100" aria-hidden="true"><use href="#paw"/></svg>
-          <p class="when"><span class="todo">À REMPLIR : date</span></p>
-          <h3><span class="todo">À REMPLIR : étape</span></h3>
-          <p><span class="todo">À REMPLIR : ce qu'elle a vécu / accompli</span></p>
-        </div>
-        <div class="step reveal">
-          <svg class="ico paw" viewBox="0 0 100 100" aria-hidden="true"><use href="#paw"/></svg>
-          <p class="when"><span class="todo">À REMPLIR : date</span></p>
-          <h3><span class="todo">À REMPLIR : étape</span></h3>
-          <p><span class="todo">À REMPLIR : ce qu'elle a vécu / accompli</span></p>
-        </div>
-        <div class="step reveal">
-          <svg class="ico paw" viewBox="0 0 100 100" aria-hidden="true"><use href="#paw"/></svg>
-          <p class="when"><span class="todo">À REMPLIR : date</span></p>
-          <h3><span class="todo">À REMPLIR : étape</span></h3>
-          <p><span class="todo">À REMPLIR : ce qu'elle a vécu / accompli</span></p>
-        </div>
-        <div class="step now reveal">
-          <svg class="ico paw" viewBox="0 0 100 100" aria-hidden="true"><use href="#paw"/></svg>
-          <p class="when">Aujourd'hui</p>
-          <h3><span class="todo">À REMPLIR : où elle en est (le salon ?)</span></h3>
-          <p><span class="todo">À REMPLIR : ce que tu vois d'elle maintenant</span></p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 03 — Ce que j'aime chez toi -->
-  <section>
-    <div class="wrap">
-      <div class="section-head reveal">
-        <p class="num">03</p>
-        <h2>Ce que j'aime <em>chez toi</em></h2>
-        <svg class="ico div-flower" viewBox="0 0 100 100" aria-hidden="true"><use href="#flower"/></svg>
-      </div>
-
-      <div class="loves">
-        <div class="love reveal"><svg class="ico mini" viewBox="0 0 100 100" aria-hidden="true"><use href="#flower"/></svg><p class="n">01</p><p><span class="todo">À REMPLIR : petit détail</span></p></div>
-        <div class="love reveal"><svg class="ico mini" viewBox="0 0 100 100" aria-hidden="true"><use href="#flower"/></svg><p class="n">02</p><p><span class="todo">À REMPLIR : petit détail</span></p></div>
-        <div class="love reveal"><svg class="ico mini" viewBox="0 0 100 100" aria-hidden="true"><use href="#flower"/></svg><p class="n">03</p><p><span class="todo">À REMPLIR : petit détail</span></p></div>
-        <div class="love reveal"><svg class="ico mini" viewBox="0 0 100 100" aria-hidden="true"><use href="#flower"/></svg><p class="n">04</p><p><span class="todo">À REMPLIR : petit détail</span></p></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 04 — Bon cadeau -->
-  <section>
-    <div class="wrap">
-      <div class="section-head reveal">
-        <p class="num">04</p>
-        <h2>Et ce n'est <em>que le début</em></h2>
+        <h2>Et ce n’est <em>que le début</em></h2>
         <svg class="ico div-flower" viewBox="0 0 100 100" aria-hidden="true"><use href="#flower"/></svg>
       </div>
 
       <div class="ticket reveal">
         <div class="main">
           <p class="eyebrow">Bon cadeau</p>
-          <h3>Bon pour <span class="todo">À REMPLIR : resto / sortie</span></h3>
-          <p class="valid">Valable lundi 28 septembre · rien à prévoir, je m'occupe de tout</p>
+          <h3>Bon pour un Burger King</h3>
+          <p class="valid">Valable lundi 28 septembre · rien à prévoir, je m’occupe de tout</p>
         </div>
         <div class="stub"><svg class="ico stub-cat" viewBox="0 0 100 100" aria-hidden="true"><use href="#cat"/></svg>Pour toi</div>
+      </div>
+
+      <div class="rsvp reveal" id="rsvp">
+        <p class="ask">Alors, on va manger au Burger King lundi&nbsp;?</p>
+        <div class="choices" id="choices">
+          <button type="button" class="yes" id="yes">Oui</button>
+          <button type="button" class="no" id="no">Non</button>
+        </div>
+        <div class="answer" id="answer" hidden>
+          <svg class="ico answer-cat" viewBox="0 0 100 120" aria-hidden="true"><use href="#catsit"/></svg>
+          <p class="ok">C’est noté&nbsp;!</p>
+          <p>Lundi, Burger King, toi et moi.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -549,11 +575,10 @@
 <footer class="end reveal">
   <div class="end-art" aria-hidden="true">
     <svg class="ico c1 float" viewBox="0 0 100 120"><use href="#catsit"/></svg>
-    <svg class="ico f float b" viewBox="0 0 100 100"><use href="#flower"/></svg>
+    <svg class="ico c3 float b" viewBox="0 0 100 120"><use href="#catsit"/></svg>
     <svg class="ico c2 float c" viewBox="0 0 100 120"><use href="#catsit"/></svg>
   </div>
-  <h2>Je t'aime</h2>
-  <p><span class="todo">À REMPLIR : votre rituel / votre blague (ou supprime cette ligne)</span></p>
+  <h2>Je t’aime</h2>
 </footer>
 
 <script>
@@ -563,6 +588,67 @@
     });
   }, { threshold: 0.15 });
   document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
+
+  // Oui / Non : le « Non » se sauve, le « Oui » grossit
+  (function () {
+    const yes = document.getElementById('yes');
+    const no = document.getElementById('no');
+    const box = document.getElementById('choices');
+    const ask = document.querySelector('.rsvp .ask');
+    const answer = document.getElementById('answer');
+    const lines = ['Non', 'T’es sûre ?', 'Vraiment ?', 'Réfléchis bien…', 'Même pas pour des frites ?', 'Allez…', 'Bon, c’est oui alors'];
+    const last = lines.length - 1;
+    let tries = 0;
+
+    function dodge(e) {
+      if (tries >= last) return;
+      if (e) e.preventDefault();
+      tries++;
+      no.textContent = lines[tries];
+      yes.style.transform = 'scale(' + (1 + tries * 0.14) + ')';
+      if (tries >= last) {
+        no.classList.remove('run');
+        no.style.left = ''; no.style.top = '';
+        return;
+      }
+      const b = box.getBoundingClientRect();
+      no.classList.add('run');
+      no.style.left = Math.random() * Math.max(0, b.width - no.offsetWidth) + 'px';
+      no.style.top = Math.random() * Math.max(0, b.height - no.offsetHeight) + 'px';
+    }
+
+    function accept() {
+      box.hidden = true;
+      ask.hidden = true;
+      answer.hidden = false;
+      burst();
+    }
+
+    no.addEventListener('mouseenter', dodge);
+    no.addEventListener('touchstart', dodge, { passive: false });
+    no.addEventListener('click', (e) => { if (tries >= last) accept(); else dodge(e); });
+    yes.addEventListener('click', accept);
+
+    function burst() {
+      if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      const colors = ['#e8c4c9', '#ffd98a', '#cdb4f5', '#9fdcc8', '#ffbf9e'];
+      for (let i = 0; i < 28; i++) {
+        const s = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+        s.setAttribute('viewBox', '0 0 100 100');
+        s.setAttribute('class', 'confetti');
+        s.style.color = colors[i % colors.length];
+        s.style.left = (Math.random() * 100) + 'vw';
+        s.style.width = s.style.height = (18 + Math.random() * 22) + 'px';
+        s.style.animationDuration = (2.4 + Math.random() * 2) + 's';
+        s.style.animationDelay = (Math.random() * 0.6) + 's';
+        const u = document.createElementNS('http://www.w3.org/2000/svg', 'use');
+        u.setAttribute('href', i % 4 === 0 ? '#paw' : '#flower');
+        s.appendChild(u);
+        document.body.appendChild(s);
+        setTimeout(() => s.remove(), 5500);
+      }
+    }
+  })();
 </script>
 </body>
 </html>
